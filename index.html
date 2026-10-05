@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meu Agente Zap · Agente de IA no WhatsApp Business em 7 dias</title>
+<meta name="description" content="Guia passo a passo + planner de 7 dias + checklist para configurar o agente de IA do WhatsApp Business e responder seus clientes 24 horas, sem programar.">
+
+<!-- Open Graph (prévia do link no WhatsApp e Instagram). Troque a imagem e a URL. -->
+<meta property="og:title" content="Agente de IA no WhatsApp Business: configure em 7 dias">
+<meta property="og:description" content="Seu WhatsApp respondendo clientes 24h. Passo a passo com prints, planner de 7 dias e checklist.">
+<meta property="og:image" content="https://meuagentezap.com/capa.jpg">
+<meta property="og:url" content="https://meuagentezap.com/">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- ===========================================================
+     META PIXEL: troque SEU_PIXEL_ID pelo ID do seu pixel
+     (Gerenciador de Eventos da Meta). Depois descomente o bloco.
+     =========================================================== -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+-->
+
+<style>
+:root{
+  --night:#0F2C33;      /* fundo do topo: o atendimento que acontece de madrugada */
+  --night-2:#173B44;
+  --sun:#FFC845;        /* destaque: botões e preço */
+  --sun-ink:#3A2A00;
+  --paper:#F2F6F5;      /* fundo claro */
+  --ink:#13272C;        /* texto principal */
+  --muted:#56707A;
+  --line:#D5E0DE;
+  --bubble-in:#FFFFFF;
+  --bubble-out:#DDF1EC;
+  --ok:#1F7A5C;
+  --radius-lg:22px;
+  --radius-sm:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.125rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.08;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,6.5vw,3.9rem);font-weight:800}
+h2{font-size:clamp(1.7rem,4.2vw,2.5rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0 0 1em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.narrow{max-width:680px}
+section{padding:72px 0}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+
+/* Botão */
+.btn{
+  display:inline-block;background:var(--sun);color:var(--sun-ink);text-decoration:none;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.15rem;
+  padding:18px 28px;border-radius:999px;box-shadow:0 6px 0 #D9A21E;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{transform:translateY(2px);box-shadow:0 4px 0 #D9A21E}
+.btn:active{transform:translateY(6px);box-shadow:0 0 0 #D9A21E}
+.btn-note{display:block;margin-top:14px;font-size:.95rem;opacity:.8}
+
+/* Aviso de pré-venda */
+.presale{background:var(--sun);color:var(--sun-ink);text-align:center;font-weight:600;font-size:.98rem;padding:10px 16px}
+
+/* HERO */
+.hero{background:var(--night);color:#fff;padding:56px 0 80px;overflow:hidden}
+.hero-grid{display:grid;gap:48px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+.hero p.lead{font-size:1.25rem;color:#CFE2E0;max-width:34em}
+.hero .facts{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-wrap:wrap;gap:10px 22px;color:#CFE2E0;font-size:1rem}
+.hero .facts li::before{content:"✓ ";color:var(--sun);font-weight:700}
+
+/* Celular estilo iPhone com WhatsApp (modo escuro) */
+:root{--wa-header:#1F2C34;--wa-bg:#0B141A;--wa-out:#005C4B;--wa-in:#1F2C34;--wa-tick:#53BDEB}
+.phone-stage{position:relative;display:flex;flex-direction:column;align-items:center}
+.phone-stage::before{content:"";position:absolute;inset:-8% -14%;background:radial-gradient(closest-side,rgba(255,200,69,.22),rgba(255,200,69,0));z-index:0}
+.iphone-frame{
+  position:relative;z-index:2;width:300px;border-radius:52px;padding:12px;
+  background:linear-gradient(155deg,#3a3e4a 0%,#1c1f27 22%,#101319 55%,#2a2e38 100%);
+  box-shadow:0 25px 80px rgba(255,200,69,.16),0 0 0 1px rgba(255,255,255,.06) inset,0 2px 2px rgba(255,255,255,.10) inset,0 30px 60px rgba(0,0,0,.45);
+}
+.iphone-frame::after{
+  content:"";position:absolute;inset:0;border-radius:52px;pointer-events:none;padding:1.5px;
+  background:linear-gradient(135deg,rgba(255,200,69,.55),rgba(124,190,200,.35) 45%,transparent 70%);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+}
+.btn-side{position:absolute;z-index:1;background:linear-gradient(90deg,#1a1d24,#3a3f4c 45%,#1a1d24);box-shadow:0 0 0 1px rgba(0,0,0,.5)}
+.btn-mute{left:-5px;top:104px;width:5px;height:24px;border-radius:2px 0 0 2px}
+.btn-vol-up{left:-5px;top:144px;width:5px;height:44px;border-radius:2px 0 0 2px}
+.btn-vol-down{left:-5px;top:198px;width:5px;height:44px;border-radius:2px 0 0 2px}
+.btn-power{right:-5px;top:166px;width:5px;height:62px;border-radius:0 2px 2px 0}
+.phone{background:var(--wa-header);border-radius:40px;position:relative;overflow:hidden;display:flex;flex-direction:column;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.dynamic-island{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:96px;height:26px;background:#000;border-radius:16px;z-index:20;display:flex;align-items:center;justify-content:flex-end;padding-right:10px}
+.dynamic-island::before{content:"";width:8px;height:8px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#3a5a8a,#0a0f18 70%)}
+.status-fake{display:flex;align-items:center;justify-content:space-between;padding:16px 26px 2px;font-size:12px;font-weight:600;color:#E9EDEF}
+.chat-head{display:flex;align-items:center;gap:10px;padding:14px 14px}
+.chat-back{color:#8696A0;flex:none}
+.chat-avatar{width:34px;height:34px;border-radius:50%;background:#2A3942;display:grid;place-items:center;font-size:17px;flex:none}
+.chat-name{font-weight:600;font-size:14.5px;color:#E9EDEF;line-height:1.2}
+.chat-status{font-size:12px;color:#8696A0;line-height:1.2}
+.chat-icons{margin-left:auto;display:flex;align-items:center;gap:16px;color:#8696A0}
+.chat-body{
+  height:430px;padding:16px 12px 10px;overflow:hidden;
+  background-color:var(--wa-bg);
+  background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px),radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:26px 26px;background-position:0 0,13px 13px;
+}
+.bubble{
+  max-width:82%;padding:7px 8px 8px 9px;border-radius:8px;font-size:13.6px;margin-bottom:8px;line-height:1.4;color:#E9EDEF;
+  opacity:0;transform:translateY(6px);animation:pop .3s ease forwards;box-shadow:0 1px 1px rgba(0,0,0,.3);display:flow-root
+}
+.bubble.in{background:var(--wa-in);border-top-left-radius:2px}
+.bubble.out{background:var(--wa-out);margin-left:auto;border-top-right-radius:2px}
+.bubble .msg-text{padding-right:52px;display:inline}
+.bubble .msg-meta{float:right;margin-top:6px;margin-left:6px;font-size:10.5px;color:rgba(233,237,239,.6);display:inline-flex;align-items:center;gap:3px}
+.bubble.out .msg-meta svg{color:var(--wa-tick)}
+@keyframes pop{to{opacity:1;transform:none}}
+.chat-body .bubble:nth-child(1){animation-delay:.2s}
+.chat-body .bubble:nth-child(2){animation-delay:.9s}
+.chat-body .bubble:nth-child(3){animation-delay:1.6s}
+.chat-body .bubble:nth-child(4){animation-delay:2.3s}
+.typing{display:inline-flex;gap:4px;padding:4px 2px}
+.typing span{width:6px;height:6px;border-radius:50%;background:#8696A0;animation:blink 1.2s infinite}
+.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.25}40%{opacity:1}}
+.chat-input-bar{display:flex;align-items:center;gap:10px;padding:10px 12px 16px}
+.chat-input-pill{flex:1;display:flex;align-items:center;gap:10px;background:#2A3942;border-radius:100px;padding:9px 14px;color:#8696A0;font-size:13px}
+.mic-btn{width:34px;height:34px;border-radius:50%;background:#00A884;display:grid;place-items:center;flex:none;color:#0B141A}
+.ai-badge{position:relative;z-index:3;margin-top:-18px;background:var(--sun);color:var(--sun-ink);font-weight:700;font-size:.9rem;padding:8px 16px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+@media(max-width:420px){.iphone-frame{width:min(290px,100%)}.chat-body{height:400px}}
+@media (prefers-reduced-motion:reduce){
+  .bubble{opacity:1;transform:none;animation:none}
+  .typing span{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* Problema */
+.problem p{font-size:1.2rem}
+.problem .big{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.5rem,3.6vw,2rem);font-weight:700;line-height:1.25;border-left:6px solid var(--sun);padding-left:20px;margin:32px 0}
+
+/* O kit */
+.kit{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kit-list{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:0}
+.kit-list li{display:grid;grid-template-columns:72px 1fr;gap:18px;padding:24px 0;border-top:1px solid var(--line)}
+.kit-list li:last-child{border-bottom:1px solid var(--line)}
+.kit-list .ico{font-size:2.2rem;line-height:1}
+@media(max-width:500px){.kit-list li{grid-template-columns:44px 1fr;gap:12px}.kit-list .ico{font-size:1.8rem}}
+.kit-list h3{margin-bottom:.25em}
+.kit-list p{margin:0;color:var(--muted)}
+.kit-list .bonus h3::after{content:"Bônus";margin-left:10px;font-family:"Source Sans 3",sans-serif;font-size:.8rem;font-weight:700;background:var(--sun);color:var(--sun-ink);padding:2px 10px;border-radius:999px;vertical-align:middle}
+
+/* Kit em duas colunas no desktop */
+.kit-grid{display:grid;gap:48px;align-items:start}
+@media(min-width:960px){.kit-grid{grid-template-columns:1fr 450px}.kit-grid .kit-mock{position:sticky;top:40px}}
+
+/* Mockup do kit: e-book + planner + checklist */
+.kit-mock{position:relative;height:480px;width:440px;max-width:none;margin:0 auto}
+.book{
+  position:absolute;left:0;top:70px;width:220px;height:315px;z-index:3;
+  transform:perspective(900px) rotateY(-16deg) rotateZ(-2deg);
+  border-radius:4px 14px 14px 4px;
+  background:linear-gradient(160deg,#16424C 0%,var(--night) 60%,#0A2026 100%);
+  box-shadow:inset 10px 0 0 rgba(0,0,0,.25),inset 12px 0 0 rgba(255,255,255,.06),18px 26px 40px rgba(15,44,51,.35);
+  color:#fff;padding:26px 22px 22px 32px;display:flex;flex-direction:column;overflow:hidden
+}
+.book::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,200,69,.45),rgba(255,200,69,0) 70%)}
+.book .kicker{font-size:.72rem;font-weight:700;color:var(--sun);letter-spacing:.02em}
+.book .t{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.55rem;line-height:1.05;margin:10px 0 8px}
+.book .s{font-size:.8rem;color:#BFD6D4;line-height:1.35}
+.book .bubbles{margin-top:auto;display:flex;flex-direction:column;gap:6px}
+.book .bubbles i{display:block;height:14px;border-radius:8px;background:#fff;opacity:.92}
+.book .bubbles i:nth-child(1){width:70%}
+.book .bubbles i:nth-child(2){width:58%;align-self:flex-end;background:var(--bubble-out)}
+.book .bubbles i:nth-child(3){width:44%;align-self:flex-end;background:var(--sun)}
+.book .author{font-size:.7rem;color:#9FC0BE;margin-top:14px}
+.sheet{
+  position:absolute;width:224px;background:rgba(255,255,255,.96);border-radius:16px;padding:14px 14px 18px;overflow:hidden;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 24px 48px rgba(15,44,51,.22),0 4px 10px rgba(15,44,51,.08);
+  font-size:.72rem;line-height:1.3;color:var(--ink);border:1px solid rgba(213,224,222,.9)
+}
+/* parte de baixo borrada: sugere que tem mais conteúdo */
+.sheet::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:46%;
+  -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);
+  background:linear-gradient(to bottom,rgba(255,255,255,0),rgba(255,255,255,.75) 55%,#fff);
+  -webkit-mask:linear-gradient(to bottom,transparent,#000 40%);mask:linear-gradient(to bottom,transparent,#000 40%);
+}
+.sh-title{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.92rem;line-height:1.15}
+.sh-sub{display:block;color:var(--muted);font-size:.68rem;margin-top:2px}
+.sh-head{background:var(--night);color:#fff;margin:-14px -14px 12px;padding:14px 14px 12px}
+.sh-head .sh-sub{color:#9FC0BE}
+.progress{height:6px;border-radius:99px;background:#E3ECEA;overflow:hidden}
+.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--ok),#3FB68B);border-radius:99px}
+.progress-label{font-size:.66rem;color:var(--muted);margin:5px 0 8px}
+.task{display:flex;align-items:center;gap:8px;padding:6px 6px;border-radius:8px;margin-bottom:3px}
+.task .day{flex:none;width:24px;height:24px;border-radius:7px;background:#EEF4F3;color:var(--night);display:grid;place-items:center;font-weight:800;font-size:.62rem}
+.task .tx{flex:1;font-weight:600}
+.task .ok{color:var(--ok);font-weight:800}
+.task .min{font-size:.6rem;color:var(--muted);background:#EEF4F3;padding:2px 6px;border-radius:99px;white-space:nowrap}
+.task.done .tx{color:var(--muted);text-decoration:line-through;text-decoration-color:rgba(86,112,122,.5)}
+.task.done .day{background:var(--ok);color:#fff}
+.task.now{background:#FFF6DA;box-shadow:0 0 0 1px #F3D98B inset}
+.task.now .day{background:var(--sun);color:var(--sun-ink)}
+.ck-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.grp{font-size:.6rem;font-weight:700;color:var(--muted);margin:8px 0 3px;letter-spacing:.02em}
+.item{display:flex;align-items:center;gap:8px;padding:5px 8px;border-radius:8px;background:#F5F9F8;margin-bottom:4px;font-weight:600}
+.item .box{width:14px;height:14px;border:2px solid #A9BDBC;border-radius:4px;flex:none;position:relative}
+.item.done .box{background:var(--ok);border-color:var(--ok)}
+.item.done .box::after{content:"";position:absolute;left:3px;top:0;width:4px;height:7px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.sheet.planner{left:178px;top:0;z-index:1;transform:rotate(4deg);width:240px}
+.sheet.check{left:205px;top:262px;z-index:4;transform:rotate(-3deg);width:220px}
+@media(max-width:959px){.kit-grid .kit-mock{order:-1}}
+@media(max-width:500px){.kit-mock{zoom:.78}}
+@media(max-width:360px){.kit-mock{zoom:.7}}
+.kit-mock.small{height:300px;max-width:330px;transform:scale(.78);transform-origin:top center;margin-bottom:-60px}
+
+/* Faixa de nichos */
+.niches{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.niches span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-weight:600;font-size:1rem}
+
+/* Brilho suave no topo */
+.hero{position:relative}
+.hero::before{content:"";position:absolute;right:-10%;top:-30%;width:70%;height:120%;background:radial-gradient(closest-side,rgba(255,200,69,.16),rgba(255,200,69,0));pointer-events:none}
+.hero .wrap{position:relative}
+
+/* Plano de 7 dias */
+.plan ol{list-style:none;padding:0;margin:36px 0 0;counter-reset:dia;position:relative}
+.plan ol::before{content:"";position:absolute;left:27px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.plan li{counter-increment:dia;position:relative;padding:0 0 26px 76px}
+.plan li::before{
+  content:counter(dia);position:absolute;left:0;top:-4px;width:56px;height:56px;border-radius:50%;
+  background:var(--night);color:var(--sun);display:grid;place-items:center;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;
+}
+.plan li strong{display:block;font-size:1.15rem}
+.plan li span{color:var(--muted);font-size:1rem}
+
+/* Para quem é */
+.fit{background:var(--night);color:#fff}
+.fit-grid{display:grid;gap:32px;margin-top:28px}
+@media(min-width:760px){.fit-grid{grid-template-columns:1fr 1fr}}
+.fit ul{list-style:none;padding:0;margin:0}
+.fit li{padding:10px 0;border-top:1px solid #2A5560;color:#DCEBEA}
+.fit .yes li::before{content:"✓  ";color:var(--sun);font-weight:700}
+.fit .no li::before{content:"✕  ";color:#8FB0B4;font-weight:700}
+.fit h3{color:#fff}
+
+/* Sobre */
+.about-grid{display:grid;gap:28px;align-items:center}
+@media(min-width:760px){.about-grid{grid-template-columns:200px 1fr}}
+.brand-mark svg{display:block;filter:drop-shadow(0 14px 24px rgba(15,44,51,.25))}
+
+/* Oferta */
+.offer{background:var(--night);color:#fff;text-align:center}
+.offer-box{background:#fff;color:var(--ink);border-radius:var(--radius-lg);padding:40px 24px;max-width:560px;margin:32px auto 0;text-align:left}
+.offer-box ul{list-style:none;padding:0;margin:0 0 28px}
+.offer-box li{padding:9px 0;border-bottom:1px solid var(--line)}
+.offer-box li::before{content:"✓ ";color:var(--ok);font-weight:700}
+.price{text-align:center;margin-bottom:24px}
+.price .from{color:var(--muted);text-decoration:line-through;font-size:1.05rem}
+.price .now{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:3.6rem;line-height:1;margin:6px 0}
+.price .inst{color:var(--muted);font-size:1rem}
+.offer-box .btn{display:block;text-align:center}
+.secure{text-align:center;color:var(--muted);font-size:.92rem;margin-top:16px}
+
+/* Garantia */
+.guarantee .g{display:grid;gap:24px;align-items:center}
+@media(min-width:760px){.guarantee .g{grid-template-columns:140px 1fr}}
+.seal{width:130px;height:130px;border-radius:50%;border:4px dashed var(--ok);display:grid;place-items:center;text-align:center;color:var(--ok);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;line-height:1.05}
+.seal b{font-size:2.6rem;display:block}
+
+/* FAQ */
+.faq details{border-top:1px solid var(--line);padding:18px 0}
+.faq details:last-of-type{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.15rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:12px 0 0;color:var(--muted)}
+
+/* Rodapé */
+footer{background:#0A1F24;color:#8FB0B4;font-size:.9rem;padding:40px 0 110px}
+footer a{color:#CFE2E0}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:16px}
+
+/* Barra fixa no celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;background:var(--night);padding:12px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;z-index:10;transform:translateY(110%);transition:transform .25s ease;border-top:1px solid #2A5560}
+.sticky.on{transform:none}
+.sticky .p{color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.2rem;line-height:1.1}
+.sticky .p small{display:block;font-family:"Source Sans 3",sans-serif;font-weight:400;font-size:.8rem;color:#9FC0BE}
+.sticky .btn{padding:12px 20px;font-size:1rem;box-shadow:none}
+@media(min-width:900px){.sticky{display:none}}
+</style>
+</head>
+<body>
+
+<!-- Aviso de pré-venda. Apague este bloco quando o produto estiver pronto. -->
+<div class="presale">Lista de espera aberta: quem entrar agora garante o preço de lançamento</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Seu WhatsApp respondendo clientes até de madrugada.</h1>
+      <p class="lead">Um passo a passo simples para configurar o agente de IA do próprio WhatsApp Business. Sem programar, sem contratar atendente, em 7 dias de cerca de 30 minutos.</p>
+      <ul class="facts">
+        <li>Guia com prints</li>
+        <li>Planner de 7 dias</li>
+        <li>Checklist final</li>
+      </ul>
+      <a class="btn" href="#oferta">Quero meu atendente de IA</a>
+      <span class="btn-note">Entre na lista de espera e garanta o preço de lançamento.</span>
+    </div>
+
+    <div class="phone-stage" role="img" aria-label="Exemplo: um cliente manda mensagem de madrugada e o agente de IA responde na hora">
+      <div class="iphone-frame" aria-hidden="true">
+        <div class="btn-side btn-mute"></div>
+        <div class="btn-side btn-vol-up"></div>
+        <div class="btn-side btn-vol-down"></div>
+        <div class="btn-side btn-power"></div>
+        <div class="phone">
+          <div class="dynamic-island"></div>
+          <div class="status-fake">
+            <span id="statusClock">23:47</span>
+            <span style="display:flex;align-items:center;gap:4px">
+              <svg width="15" height="11" viewBox="0 0 18 12" fill="none"><rect x="0" y="6" width="3" height="6" rx=".5" fill="#E9EDEF"/><rect x="5" y="4" width="3" height="8" rx=".5" fill="#E9EDEF"/><rect x="10" y="1.5" width="3" height="10.5" rx=".5" fill="#E9EDEF"/><rect x="15" y="0" width="3" height="12" rx=".5" fill="#E9EDEF" opacity=".35"/></svg>
+              <svg width="16" height="11" viewBox="0 0 20 12" fill="none"><rect x=".5" y=".5" width="17" height="11" rx="2.5" stroke="#E9EDEF" stroke-opacity=".6"/><rect x="2" y="2" width="9" height="8" rx="1.2" fill="#E9EDEF"/><rect x="18.5" y="4" width="1.5" height="4" rx=".7" fill="#E9EDEF" opacity=".6"/></svg>
+            </span>
+          </div>
+          <div class="chat-head">
+            <svg class="chat-back" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="chat-avatar" id="chatAvatar">💈</div>
+            <div>
+              <div class="chat-name" id="chatName">Barbearia do Bairro</div>
+              <div class="chat-status" id="chatStatus">online</div>
+            </div>
+            <div class="chat-icons">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 10l5-3v10l-5-3" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><rect x="2" y="6" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="bubble out"><span class="msg-text">Oi! Vocês têm horário amanhã de manhã? Quanto é corte + barba?</span><span class="msg-meta">23:47<svg width="15" height="10" viewBox="0 0 16 11" fill="none"><path d="M1 5.5L4.5 9 11 1.5M5 5.5L8.5 9 15 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="bubble in"><span class="msg-text">Oi! Temos sim 😊 Corte + barba sai R$ 60. Amanhã tem horário às 9h e às 10h30. Qual fica melhor?</span><span class="msg-meta">23:47</span></div>
+            <div class="bubble out"><span class="msg-text">9h, por favor!</span><span class="msg-meta">23:48<svg width="15" height="10" viewBox="0 0 16 11" fill="none"><path d="M1 5.5L4.5 9 11 1.5M5 5.5L8.5 9 15 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="bubble in"><span class="msg-text">Anotado pra 9h! O barbeiro confirma assim que abrir. Até amanhã 👊</span><span class="msg-meta">23:48</span></div>
+          </div>
+          <div class="chat-input-bar">
+            <div class="chat-input-pill">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M9 9h.01M15 9h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>Mensagem</span>
+            </div>
+            <div class="mic-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3z" stroke="currentColor" stroke-width="1.8"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-badge" aria-hidden="true">Respondido pelo agente de IA</div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEMA -->
+<section class="problem">
+  <div class="wrap narrow">
+    <h2>Quantos clientes você perdeu essa semana por demorar para responder?</h2>
+    <p>Você está atendendo, cortando cabelo, fechando o caixa, e o WhatsApp não para. Quando finalmente responde, o cliente já fechou com outro.</p>
+    <p class="big">O problema não é falta de cliente. É não ter quem responda na hora.</p>
+    <p>Desde 2026 o WhatsApp Business tem um agente de IA próprio, que responde seus clientes usando as informações do seu negócio. A ferramenta já está no seu celular e não tem custo hoje. O que falta é saber configurar do jeito certo, e é isso que este kit ensina.</p>
+    <p>Com textos prontos para:</p>
+    <div class="niches"><span>💈 Barbearias</span><span>💇 Salões de Beleza</span><span>✨ Clínicas de Estética</span><span>🦷 Dentistas</span><span>🩺 Consultórios</span><span>🐾 Pet Shops</span></div>
+  </div>
+</section>
+
+<!-- O KIT -->
+<section class="kit">
+  <div class="wrap kit-grid">
+  <div>
+    <h2>O que você recebe</h2>
+    <p>Não é só um e-book para ler. É um kit para você aplicar e ver funcionando.</p>
+    <ul class="kit-list">
+      <li><span class="ico" aria-hidden="true">📘</span><div><h3>E-book com passo a passo e prints</h3><p>Do perfil comercial até a IA respondendo sozinha. Linguagem simples, cada tela explicada.</p></div></li>
+      <li><span class="ico" aria-hidden="true">🗓️</span><div><h3>Planner de 7 dias</h3><p>Uma página por dia dizendo exatamente o que fazer, com tempo estimado e espaço para anotar.</p></div></li>
+      <li><span class="ico" aria-hidden="true">✅</span><div><h3>Checklist final</h3><p>Para conferir se seu atendente está pronto. Dá para imprimir e deixar ao lado do caixa.</p></div></li>
+      <li class="bonus"><span class="ico" aria-hidden="true">💬</span><div><h3>Textos prontos para treinar a IA</h3><p>Modelos para barbearias, salões de beleza, clínicas de estética, dentistas, consultórios e pet shops. É só adaptar e colar.</p></div></li>
+    </ul>
+  </div>
+  <div class="kit-mock" role="img" aria-label="O kit: capa do e-book, folha do planner de 7 dias e checklist">
+    <div class="sheet planner" aria-hidden="true">
+      <div class="sh-head"><span class="sh-title">Planner de implementação</span><span class="sh-sub">7 dias · 30 min por dia</span></div>
+      <div class="progress"><span style="width:43%"></span></div>
+      <div class="progress-label">3 de 7 dias concluídos</div>
+      <div class="task done"><span class="day">D1</span><span class="tx">Perfil comercial completo</span><span class="ok">✓</span></div>
+      <div class="task done"><span class="day">D2</span><span class="tx">Catálogo com fotos e preços</span><span class="ok">✓</span></div>
+      <div class="task done"><span class="day">D3</span><span class="tx">Treinar o agente de IA</span><span class="ok">✓</span></div>
+      <div class="task now"><span class="day">D4</span><span class="tx">Ativar e definir horários</span><span class="min">30 min</span></div>
+      <div class="task"><span class="day">D5</span><span class="tx">Testar como cliente</span><span class="min">30 min</span></div>
+      <div class="task"><span class="day">D6</span><span class="tx">Assumir a conversa</span><span class="min">20 min</span></div>
+    </div>
+    <div class="book" aria-hidden="true">
+      <span class="kicker">Guia prático com prints</span>
+      <span class="t">Agente de IA no WhatsApp Business</span>
+      <span class="s">Configure em 7 dias e atenda seus clientes 24 horas</span>
+      <span class="bubbles"><i></i><i></i><i></i></span>
+      <span class="author">Meu Agente Zap</span>
+    </div>
+    <div class="sheet check" aria-hidden="true">
+      <div class="ck-head">
+        <div><span class="sh-title">Checklist final</span><span class="sh-sub">Pronto para atender</span></div>
+        <svg class="ring" viewBox="0 0 36 36" width="44" height="44"><circle cx="18" cy="18" r="15" fill="none" stroke="#E3ECEA" stroke-width="4"/><circle cx="18" cy="18" r="15" fill="none" stroke="#1F7A5C" stroke-width="4" stroke-linecap="round" stroke-dasharray="75 95" transform="rotate(-90 18 18)"/><text x="18" y="21.5" text-anchor="middle" font-size="9" font-weight="700" fill="#13272C">12/15</text></svg>
+      </div>
+      <div class="grp">Perfil</div>
+      <div class="item done"><span class="box"></span>Horário e endereço</div>
+      <div class="item done"><span class="box"></span>Descrição do negócio</div>
+      <div class="grp">Agente de IA</div>
+      <div class="item done"><span class="box"></span>Serviços e preços</div>
+      <div class="item"><span class="box"></span>Teste com 5 perguntas</div>
+      <div class="item"><span class="box"></span>Horário de atuação</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- PLANO DE 7 DIAS -->
+<section class="plan">
+  <div class="wrap narrow">
+    <h2>Seu plano de 7 dias</h2>
+    <p>Cerca de 30 minutos por dia. No sétimo dia, seu WhatsApp está atendendo sozinho.</p>
+    <ol>
+      <li><strong>Perfil comercial completo</strong><span>Horário, endereço, descrição e links: a base que a IA usa para responder.</span></li>
+      <li><strong>Catálogo que a IA consegue usar</strong><span>Fotos, preços e descrições escritas do jeito certo.</span></li>
+      <li><strong>Treinando o agente</strong><span>Quais informações colocar, usando os textos prontos do seu tipo de negócio.</span></li>
+      <li><strong>Ativando e escolhendo os horários</strong><span>24 horas ou só quando você não pode atender.</span></li>
+      <li><strong>Testando como se fosse um cliente</strong><span>Como encontrar e corrigir respostas erradas.</span></li>
+      <li><strong>Quando você assume a conversa</strong><span>Acompanhar, revisar e entrar na hora certa.</span></li>
+      <li><strong>Revisão com o checklist</strong><span>Tudo conferido, atendente no ar.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="fit">
+  <div class="wrap narrow">
+    <h2>Para quem é este kit</h2>
+    <div class="fit-grid">
+      <div class="yes">
+        <h3>É para você se</h3>
+        <ul>
+          <li>Atende clientes pelo WhatsApp Business</li>
+          <li>Tem barbearia, salão de beleza, clínica de estética, consultório odontológico ou médico, ou pet shop</li>
+          <li>Perde mensagens quando está ocupado ou fora do horário</li>
+          <li>Não quer mexer com programação</li>
+        </ul>
+      </div>
+      <div class="no">
+        <h3>Não é para você se</h3>
+        <ul>
+          <li>Precisa de vários atendentes no mesmo número</li>
+          <li>Usa a API oficial com sistemas integrados</li>
+          <li>Procura uma fórmula mágica de vendas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about">
+  <div class="wrap narrow about-grid">
+    <div class="brand-mark" role="img" aria-label="Logo Meu Agente Zap">
+      <svg viewBox="0 0 120 120" width="160" height="160" aria-hidden="true">
+        <rect width="120" height="120" rx="32" fill="#0F2C33"/>
+        <path d="M30 34h60a10 10 0 0 1 10 10v28a10 10 0 0 1-10 10H54l-16 14v-14h-8a10 10 0 0 1-10-10V44a10 10 0 0 1 10-10z" fill="#FFC845"/>
+        <text x="60" y="68" text-anchor="middle" font-family="Bricolage Grotesque,system-ui,sans-serif" font-weight="800" font-size="26" fill="#3A2A00">IA</text>
+        <circle cx="94" cy="26" r="6" fill="#3FB68B"/>
+      </svg>
+    </div>
+    <div>
+      <h2>Quem está por trás do kit</h2>
+      <p>O <strong>Meu Agente Zap</strong> é feito por quem trabalha há mais de 10 anos com tecnologia e hoje cria automações de atendimento com IA para barbearias, salões, clínicas e outros negócios que atendem pelo WhatsApp. O kit foi pensado para quem não tem tempo nem paciência para tutoriais técnicos: só o que funciona, na ordem certa.</p>
+      <p><a href="https://instagram.com/meuagentezap.ia" target="_blank" rel="noopener">Siga @meuagentezap.ia</a> para dicas de atendimento com IA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="offer" id="oferta">
+  <div class="wrap">
+    <h2>Garanta o preço de lançamento</h2>
+    <div class="offer-box">
+      <ul>
+        <li>E-book com passo a passo e prints</li>
+        <li>Planner de 7 dias</li>
+        <li>Checklist final</li>
+        <li>Bônus: textos prontos para treinar a IA</li>
+      </ul>
+      <div class="price">
+        <span class="from">Preço normal R$ 47</span>
+        <span class="now">R$ 37</span>
+        <span class="inst">preço de lançamento para quem está na lista</span>
+      </div>
+      <!-- FASE LISTA DE ESPERA: quando o checkout da Hotmart existir, troque o href pelo link de checkout,
+           o texto por "Garantir meu kit por R$ 37" e a frase abaixo por "Pagamento processado pela Hotmart. Acesso enviado por e-mail." -->
+      <a class="btn" id="cta-checkout" href="https://wa.me/5511975049937?text=Ol%C3%A1%21%20Quero%20entrar%20na%20lista%20de%20espera%20do%20Kit%20Meu%20Agente%20Zap%20e%20garantir%20o%20pre%C3%A7o%20de%20lan%C3%A7amento." target="_blank" rel="noopener">Quero entrar na lista de espera</a>
+      <p class="secure">Abre uma conversa no WhatsApp. Você recebe o link de compra com o preço de lançamento assim que o kit for liberado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="guarantee">
+  <div class="wrap narrow g">
+    <div class="seal"><span><b>7</b>dias de<br>garantia</span></div>
+    <div>
+      <h2>Se não servir para você, devolvemos tudo</h2>
+      <p>Você tem 7 dias para ver o kit. Se achar que não vale, pede o reembolso direto pela Hotmart e recebe 100% do valor, sem precisar explicar o motivo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap narrow">
+    <h2>Perguntas frequentes</h2>
+    <details><summary>O agente de IA ainda não aparece no meu WhatsApp. E agora?</summary><p>A Meta está liberando o recurso aos poucos. O kit mostra como verificar e traz um plano B com mensagens automáticas, ausência e respostas rápidas, para você já atender melhor enquanto a IA não chega. Quando ela aparecer, é só seguir o passo a passo.</p></details>
+    <details><summary>Preciso pagar alguma coisa ao WhatsApp?</summary><p>Hoje o agente de IA do aplicativo WhatsApp Business não tem custo adicional. A cobrança por mensagem que começou em outubro de 2026 vale para a API oficial usada por grandes empresas, não para o aplicativo do celular.</p></details>
+    <details><summary>Preciso saber programar?</summary><p>Não. Tudo é feito no próprio aplicativo, no celular, com prints de cada tela.</p></details>
+    <details><summary>Funciona no iPhone e no Android?</summary><p>Sim. O WhatsApp Business existe nos dois e o passo a passo serve para ambos.</p></details>
+    <details><summary>Como funciona a lista de espera?</summary><p>Você entra pelo WhatsApp, sem pagar nada agora. Quando o kit for liberado, você recebe o link de compra com o preço de lançamento de R$ 37. A compra é feita pela Hotmart, com Pix ou cartão, e o acesso chega no seu e-mail.</p></details>
+    <details><summary>E se eu comprar e não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart e recebe 100% do valor.</p></details>
+    <details><summary>E se eu tiver dúvidas?</summary><p>Fale comigo pelo WhatsApp de suporte: <a href="https://wa.me/5511975049937?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">clique aqui</a>.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="termos.html">Termos de uso</a>
+      <a href="privacidade.html">Política de privacidade</a>
+      <a href="https://wa.me/5511975049937?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">Suporte</a>
+      <a href="https://instagram.com/meuagentezap.ia" target="_blank" rel="noopener">Instagram @meuagentezap.ia</a>
+    </nav>
+    <p>Jose Antonio Zavaleta Lopez Tecnologia da Informação · CNPJ [SEU CNPJ]</p>
+    <p>Este produto não é afiliado, patrocinado ou endossado pela Meta ou pelo WhatsApp. WhatsApp é marca registrada da Meta Platforms, Inc.</p>
+  </div>
+</footer>
+
+<!-- Barra fixa no celular -->
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="p">R$ 37<small>Preço de lançamento</small></div>
+  <a class="btn" href="#oferta" tabindex="-1">Entrar na lista</a>
+</div>
+
+<script>
+// Conversas no celular: alterna entre tipos de negócio, sempre fora do horário
+(function(){
+  var convs=[
+    {name:'Studio Bella Salão',av:'💇',clock:'00:12',msgs:[
+      {who:'out',t:'Oi! Quanto custa escova + hidratação?'},
+      {who:'in',t:'Oi! 😊 Escova + hidratação sai R$ 120 e leva cerca de 1h30. Quer que eu veja um horário pra você?'},
+      {who:'out',t:'Sábado de manhã tem?'},
+      {who:'in',t:'Tem sim, às 9h e às 11h. Anoto qual? A equipe confirma assim que abrir 💜'}]},
+    {name:'Clínica Pele Viva',av:'✨',clock:'22:58',msgs:[
+      {who:'out',t:'Vocês fazem limpeza de pele? Qual o valor?'},
+      {who:'in',t:'Fazemos sim! A limpeza de pele profunda custa R$ 180 e dura cerca de 1h.'},
+      {who:'out',t:'Aceita cartão?'},
+      {who:'in',t:'Aceitamos Pix e cartão em até 3x ✨ Quer agendar uma avaliação?'}]},
+    {name:'Odonto Sorriso',av:'🦷',clock:'06:05',msgs:[
+      {who:'out',t:'Bom dia, vocês atendem por convênio?'},
+      {who:'in',t:'Bom dia! Atendemos os principais convênios e também particular. Qual é o seu plano?'},
+      {who:'out',t:'Amil'},
+      {who:'in',t:'Atendemos Amil, sim 😊 Vou deixar seu pedido de consulta anotado pra recepção confirmar às 8h.'}]},
+    {name:'Pet Shop Amigo Fiel',av:'🐾',clock:'21:34',msgs:[
+      {who:'out',t:'Banho e tosa pra um shih-tzu, quanto fica?'},
+      {who:'in',t:'Oi! 🐶 Banho e tosa para porte pequeno sai R$ 85. Buscamos e levamos em casa por R$ 15.'},
+      {who:'out',t:'Pode ser quinta à tarde?'},
+      {who:'in',t:'Quinta às 14h está livre! Já deixei reservado, a equipe confirma amanhã cedo 🐾'}]},
+    {name:'Barbearia do Bairro',av:'💈',clock:'23:47',msgs:[
+      {who:'out',t:'Oi! Vocês têm horário amanhã de manhã? Quanto é corte + barba?'},
+      {who:'in',t:'Oi! Temos sim 😊 Corte + barba sai R$ 60. Amanhã tem horário às 9h e às 10h30. Qual fica melhor?'},
+      {who:'out',t:'9h, por favor!'},
+      {who:'in',t:'Anotado pra 9h! O barbeiro confirma assim que abrir. Até amanhã 👊'}]}
+  ];
+  var CHECKS='<svg width="15" height="10" viewBox="0 0 16 11" fill="none"><path d="M1 5.5L4.5 9 11 1.5M5 5.5L8.5 9 15 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var body=document.getElementById('chatBody');
+  var nameEl=document.getElementById('chatName'),avEl=document.getElementById('chatAvatar');
+  var stEl=document.getElementById('chatStatus'),clockEl=document.getElementById('statusClock');
+  if(!body||(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches))return;
+  function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
+  function bubble(who,text,time){
+    var b=document.createElement('div');b.className='bubble '+who;
+    b.innerHTML='<span class="msg-text"></span><span class="msg-meta">'+time+(who==='out'?CHECKS:'')+'</span>';
+    b.querySelector('.msg-text').textContent=text;return b;
+  }
+  async function play(c){
+    body.innerHTML='';nameEl.textContent=c.name;avEl.textContent=c.av;clockEl.textContent=c.clock;stEl.textContent='online';
+    for(var i=0;i<c.msgs.length;i++){
+      var m=c.msgs[i];
+      if(m.who==='in'){
+        stEl.textContent='digitando...';
+        var ty=document.createElement('div');ty.className='bubble in';
+        ty.innerHTML='<div class="typing"><span></span><span></span><span></span></div>';
+        body.appendChild(ty);await wait(1100);ty.remove();stEl.textContent='online';
+        body.appendChild(bubble('in',m.t,c.clock));await wait(1300);
+      }else{
+        body.appendChild(bubble('out',m.t,c.clock));await wait(1000);
+      }
+    }
+  }
+  (async function loop(){
+    await wait(4500);
+    for(var i=0;;i++){await play(convs[i%convs.length]);await wait(3800);}
+  })();
+})();
+
+// Barra fixa aparece depois do topo e some na oferta
+(function(){
+  var bar=document.getElementById('sticky');
+  var hero=document.querySelector('.hero');
+  var offer=document.getElementById('oferta');
+  function check(){
+    var pastHero=hero.getBoundingClientRect().bottom<0;
+    var r=offer.getBoundingClientRect();
+    var atOffer=r.top<window.innerHeight&&r.bottom>0;
+    bar.classList.toggle('on',pastHero&&!atOffer);
+  }
+  window.addEventListener('scroll',check,{passive:true});check();
+})();
+
+// Evento do pixel ao clicar no checkout (funciona quando o pixel estiver ativo)
+document.getElementById('cta-checkout').addEventListener('click',function(){
+  if(window.fbq){fbq('track','Lead');}
+});
+</script>
+</body>
+</html>
