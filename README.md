@@ -7,7 +7,7 @@ Site estático (HTML puro) servido por Nginx em Docker, publicado na VPS da Host
 
 | Arquivo | O que é |
 |---|---|
-| `index.html` | Página de vendas (fase atual: lista de espera pelo WhatsApp) |
+| `index.html` | Página de vendas (venda direta pela Hotmart) |
 | `termos.html` | Termos de uso |
 | `privacidade.html` | Política de privacidade (LGPD) |
 | `capa.jpg` | Imagem de prévia ao compartilhar o link (1200×630) |
@@ -18,7 +18,6 @@ Site estático (HTML puro) servido por Nginx em Docker, publicado na VPS da Host
 
 - [ ] Trocar `[SEU CNPJ]` em `index.html`, `termos.html` e `privacidade.html`
 - [ ] Criar o pixel da Meta, trocar `SEU_PIXEL_ID` e descomentar o bloco no `<head>` do `index.html`
-- [ ] Quando o produto existir na Hotmart: trocar o botão da oferta pelo link de checkout (instruções no comentário `FASE LISTA DE ESPERA` no `index.html`)
 
 ## Deploy (EasyPanel)
 
