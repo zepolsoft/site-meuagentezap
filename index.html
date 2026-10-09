@@ -47,15 +47,19 @@ fbq('track', 'PageView');
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0 0 .45em;letter-spacing:-.02em}
-h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:800}
+h1{font-size:clamp(2.55rem,7.4vw,4.3rem);font-weight:800;line-height:1.04;letter-spacing:-.02em}
 h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800}
 h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0 0 1em}
 a{color:inherit}
 img,svg{max-width:100%}
 .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
-section{padding:96px 0}
-.sec-head{max-width:640px;margin-bottom:44px}
+:root{--sec:48px}
+@media(min-width:700px){:root{--sec:64px}}
+@media(min-width:1000px){:root{--sec:80px}}
+section{padding:var(--sec) 0}
+.sec-head{max-width:640px;margin-bottom:32px}
+@media(min-width:700px){.sec-head{margin-bottom:40px}}
 .sec-head p{color:var(--muted);font-size:1.2rem;margin:0}
 .dark .sec-head p{color:#A9C6C4}
 :focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:8px}
@@ -182,7 +186,7 @@ section{padding:96px 0}
 @media(max-width:600px){.hero-ctas .btn{width:100%;justify-content:center;text-align:center}.hero-ctas{gap:10px}.micro{margin:0 0 20px}.hero .trust{display:none}}
 .chip{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:1rem;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#E7F1F0}
 
-.midcta{padding:0 0 8px;background:var(--paper,#F3F7F6)}
+.midcta{padding:32px 0;background:var(--paper)}
 .midcta-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;background:#fff;border:2px solid var(--sun);border-radius:24px;padding:22px 26px;box-shadow:0 10px 30px rgba(15,44,51,.08)}
 .midcta-card strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;color:var(--deep)}
 .midcta-card span{display:block;color:#4A6168;font-size:.98rem;margin-top:2px}
@@ -228,14 +232,15 @@ section{padding:96px 0}
 /* Kit (bento) */
 .kit{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .bento{display:grid;gap:18px}
-@media(min-width:960px){.bento{grid-template-columns:1.05fr .95fr;grid-template-rows:auto auto}}
-.tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);padding:28px}
+@media(min-width:960px){.bento{grid-template-columns:.85fr 1.15fr;grid-template-rows:auto auto;align-items:stretch}}
+.tile{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-xl);padding:24px}
 .tile p{color:var(--muted);margin:0}
 .tile .ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:#fff;border:1px solid var(--line);margin-bottom:16px}
 .tile-hero{justify-content:center;background:radial-gradient(600px 300px at 80% 0%,rgba(255,200,69,.22),transparent 60%),var(--night);border:0;color:#fff;display:flex;flex-direction:column;align-items:center;padding:36px 20px 28px;overflow:hidden}
 @media(min-width:960px){.tile-hero{grid-row:span 2}}
 .tile-hero .cap{align-self:stretch;text-align:center;color:#A9C6C4;font-size:1rem;margin-top:8px}
 .tile-hero .kit-mock{height:545px}
+@media(min-width:960px){.tile-hero .kit-mock{zoom:1}}
 .tile-list{display:grid;gap:18px}
 @media(min-width:620px){.tile-list{grid-template-columns:1fr 1fr}}
 .tile.bonus{background:#FFF6DA;border-color:#F3D98B}
@@ -340,7 +345,9 @@ section{padding:96px 0}
 .brand-mark svg{display:block;filter:drop-shadow(0 14px 24px rgba(15,44,51,.25))}
 
 /* Oferta */
-.offer{padding-top:24px}
+.fit,.about,.offer,.faq{padding-top:var(--sec);padding-bottom:0}
+.about,.offer,.faq{padding-top:calc(var(--sec) * .8)}
+.final{padding:calc(var(--sec) * .8) 0 var(--sec)}
 .offer-card{position:relative;overflow:hidden;border-radius:36px;background:radial-gradient(800px 400px at 100% 0%,rgba(255,200,69,.2),transparent 60%),radial-gradient(600px 400px at 0% 100%,rgba(63,182,139,.18),transparent 60%),var(--night);color:#fff;padding:48px 24px;display:grid;gap:40px}
 @media(min-width:900px){.offer-card{grid-template-columns:1.1fr .9fr;padding:64px;align-items:center}}
 .offer-card h2{margin-bottom:.35em}
@@ -375,7 +382,7 @@ section{padding:96px 0}
 .faq details a{color:var(--ok);font-weight:700}
 
 /* Chamada final */
-.final{padding:0 0 96px}
+
 .final-card{text-align:center;background:var(--sun);color:var(--sun-ink);border-radius:36px;padding:56px 24px;position:relative;overflow:hidden}
 .final-card::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(58,42,0,.08) 1.2px,transparent 1.2px);background-size:22px 22px;pointer-events:none}
 .final-card > *{position:relative}
@@ -716,7 +723,7 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
-<section class="about" style="padding-top:0">
+<section class="about">
   <div class="wrap">
     <div class="about-card">
       <div class="brand-mark" role="img" aria-label="Logo Meu Agente Zap">
