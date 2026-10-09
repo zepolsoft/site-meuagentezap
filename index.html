@@ -920,8 +920,9 @@ footer a:hover{text-decoration:underline}
 // Eventos do Pixel (só disparam se o visitante aceitou os cookies)
 var MAZ={content_name:'Kit Meu Agente Zap',content_category:'Infoproduto',value:37.00,currency:'BRL'};
 function mazTrack(ev,p){ if(window.fbq){ fbq('track',ev,p||{}); } }
+function mazCustom(ev,p){ if(window.fbq){ fbq('trackCustom',ev,p||{}); } }
 document.querySelectorAll('.js-checkout').forEach(function(a){
-  a.addEventListener('click',function(){ mazTrack('InitiateCheckout',MAZ); });
+  a.addEventListener('click',function(){ mazCustom('ClicouComprar',MAZ); }); /* InitiateCheckout e Purchase vêm do Pixel da Hotmart no checkout */
 });
 document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
   a.addEventListener('click',function(){ mazTrack('Lead',{content_name:'Suporte WhatsApp'}); });
