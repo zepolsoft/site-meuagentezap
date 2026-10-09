@@ -24,15 +24,24 @@
      META PIXEL (Pixel Meu Agente Zap)
      =========================================================== -->
 <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '860813510386042');
-fbq('track', 'PageView');
+/* Pixel só carrega após o visitante aceitar cookies de medição (LGPD) */
+(function(){
+  var ID='860813510386042';
+  function loadPixel(){
+    if(window.fbq)return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',ID);
+    fbq('track','PageView');
+  }
+  window.mazLoadPixel=loadPixel;
+  var c=null;try{c=localStorage.getItem('maz_consent');}catch(e){}
+  if(c==='yes')loadPixel();
+})();
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=860813510386042&ev=PageView&noscript=1" alt=""/></noscript>
 
 
 <style>
@@ -444,6 +453,12 @@ footer a:hover{text-decoration:underline}
 .pay-note{display:block;color:var(--muted);font-size:.9rem;margin-top:10px}
 .hero .avail{margin:0 0 26px}.hero-ctas{margin:26px 0 22px}
 @media(max-width:600px){.hero .avail{margin:0 0 22px}.hero-ctas{margin:22px 0 18px}}
+.cookie{position:fixed;left:12px;right:12px;bottom:12px;z-index:9999;background:#fff;color:#13272C;border:1px solid #DCE6E4;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.28);padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:760px;margin:0 auto;font-size:.95rem;line-height:1.4}
+.cookie[hidden]{display:none}
+.cookie p{margin:0;flex:1 1 280px}.cookie a{color:#0F2C33;font-weight:700}
+.ck-btns{display:flex;gap:10px;flex:0 0 auto}
+.ck-btns button{font:inherit;font-weight:700;border-radius:999px;padding:11px 22px;cursor:pointer;border:2px solid #0F2C33;background:#fff;color:#0F2C33}
+.ck-btns #ck-yes{background:#0F2C33;color:#FFC845}
 </style>
 </head>
 <body>
@@ -901,10 +916,38 @@ footer a:hover{text-decoration:underline}
   }
   window.addEventListener('scroll',check,{passive:true});check();
 })();
-// Evento do pixel ao clicar para ir ao checkout
+// Eventos do Pixel (só disparam se o visitante aceitou os cookies)
+var MAZ={content_name:'Kit Meu Agente Zap',content_category:'Infoproduto',value:37.00,currency:'BRL'};
+function mazTrack(ev,p){ if(window.fbq){ fbq('track',ev,p||{}); } }
 document.querySelectorAll('.js-checkout').forEach(function(a){
-  a.addEventListener('click',function(){ if(window.fbq){fbq('track','InitiateCheckout');} });
+  a.addEventListener('click',function(){ mazTrack('InitiateCheckout',MAZ); });
+});
+document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+  a.addEventListener('click',function(){ mazTrack('Lead',{content_name:'Suporte WhatsApp'}); });
+});
+(function(){
+  var sent=false;
+  function onScroll(){
+    if(sent||!window.fbq)return;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0&&window.scrollY/h>=0.5){ sent=true; mazTrack('ViewContent',MAZ); window.removeEventListener('scroll',onScroll); }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+})();
+// Aviso de cookies
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.getElementById('cookie');if(!box)return;
+  var c=null;try{c=localStorage.getItem('maz_consent');}catch(e){}
+  if(c){return;}
+  box.hidden=false;
+  function set(v){ try{localStorage.setItem('maz_consent',v);}catch(e){} box.hidden=true; if(v==='yes'&&window.mazLoadPixel){ mazLoadPixel(); } }
+  document.getElementById('ck-yes').addEventListener('click',function(){set('yes');});
+  document.getElementById('ck-no').addEventListener('click',function(){set('no');});
 });
 </script>
+<div id="cookie" class="cookie" role="dialog" aria-label="Aviso de cookies" hidden>
+  <p>Usamos cookies e o pixel da Meta para medir visitas e melhorar nossos anúncios. Você pode recusar sem perder nada no site. <a href="privacidade.html#cookies">Saiba mais</a></p>
+  <div class="ck-btns"><button type="button" id="ck-no">Recusar</button><button type="button" id="ck-yes">Aceitar</button></div>
+</div>
 </body>
 </html>
