@@ -47,7 +47,7 @@ fbq('track', 'PageView');
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif;font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.05;margin:0 0 .45em;letter-spacing:-.02em}
-h1{font-size:clamp(2.5rem,6.6vw,4.6rem);font-weight:800}
+h1{font-size:clamp(2.2rem,5vw,3.3rem);font-weight:800}
 h2{font-size:clamp(1.9rem,4.4vw,3rem);font-weight:800}
 h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0 0 1em}
@@ -172,10 +172,28 @@ section{padding:96px 0}
 @media(max-width:520px){.float-card{display:none}}
 
 /* Faixa de nichos */
-.niches-band{background:var(--deep);color:#CFE2E0;padding:26px 0;border-top:1px solid rgba(255,255,255,.06)}
-.niches-band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 12px}
-.niches-band .lbl{font-weight:600;color:#8FB0B4;margin-right:6px}
+.niches-band{background:var(--deep);color:#CFE2E0;padding:30px 0;border-top:1px solid rgba(255,255,255,.06)}
+.niches-band .wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.niches-band .lbl{margin:0;font-weight:700;color:#CFE2E0;font-size:1.05rem;text-align:center}
+.niches-band .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px}
+@media(max-width:600px){.niches-band .chips{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;max-width:420px}.niches-band .chip{justify-content:center;padding:10px 8px;font-size:.95rem;text-align:center}}
+.tag .old{font-weight:600;opacity:.8}
+.micro{margin:0 0 22px;font-size:.92rem;color:#9FC0BE}
+@media(max-width:600px){.hero-ctas .btn{width:100%;justify-content:center;text-align:center}.hero-ctas{gap:10px}.micro{margin:0 0 20px}.hero .trust{display:none}}
 .chip{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:1rem;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#E7F1F0}
+
+.midcta{padding:0 0 8px;background:var(--paper,#F3F7F6)}
+.midcta-card{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;background:#fff;border:2px solid var(--sun);border-radius:24px;padding:22px 26px;box-shadow:0 10px 30px rgba(15,44,51,.08)}
+.midcta-card strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.3rem;color:var(--deep)}
+.midcta-card span{display:block;color:#4A6168;font-size:.98rem;margin-top:2px}
+@media(max-width:600px){.midcta-card{flex-direction:column;align-items:stretch;text-align:center}.midcta-card .btn{width:100%;text-align:center;justify-content:center}}
+
+.helpbox{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-top:28px;background:#E2F2EC;border:1px solid #BFE3D3;border-radius:24px;padding:22px 26px}
+.helpbox strong{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:1.2rem;color:var(--deep)}
+.helpbox span{display:block;color:#35564C;font-size:.98rem;margin-top:2px}
+.btn.wa{background:#1FA855;color:#fff;box-shadow:none;gap:10px}
+.btn.wa:hover{background:#178a45}
+@media(max-width:600px){.helpbox{flex-direction:column;align-items:stretch;text-align:center}.helpbox .btn{justify-content:center}}
 
 /* Antes x depois */
 .compare{display:grid;gap:20px}
@@ -371,6 +389,9 @@ footer{background:var(--deep);color:#8FB0B4;font-size:.95rem;padding:48px 0 120p
 .foot-grid{display:grid;gap:24px}
 @media(min-width:760px){.foot-grid{grid-template-columns:1fr auto;align-items:start}}
 footer nav{display:flex;flex-wrap:wrap;gap:10px 22px}
+.social{display:flex;gap:12px;margin-top:4px}
+.social a{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);color:#fff;transition:background .15s,transform .15s}
+.social a:hover{background:var(--sun);color:var(--deep);transform:translateY(-2px);text-decoration:none}
 footer a{color:#CFE2E0;text-decoration:none}
 footer a:hover{text-decoration:underline}
 .legal{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);font-size:.88rem;line-height:1.6}
@@ -414,8 +435,8 @@ footer a:hover{text-decoration:underline}
 .stack li span{display:block;color:#A9C6C4;font-size:.98rem;line-height:1.4}
 .stack li em{font-style:normal;font-size:.78rem;font-weight:800;background:var(--sun);color:var(--sun-ink);padding:2px 9px;border-radius:999px;margin-left:6px;vertical-align:middle}
 .pay-note{display:block;color:var(--muted);font-size:.9rem;margin-top:10px}
-.hero .avail{margin:18px 0 30px}
-@media(max-width:600px){.hero .avail{margin:16px 0 26px}.hero-ctas{margin-top:0}}
+.hero .avail{margin:0 0 26px}.hero-ctas{margin:26px 0 22px}
+@media(max-width:600px){.hero .avail{margin:0 0 22px}.hero-ctas{margin:22px 0 18px}}
 </style>
 </head>
 <body>
@@ -428,7 +449,7 @@ footer a:hover{text-decoration:underline}
       <a href="#kit">O kit</a>
       <a href="#plano">7 dias</a>
       <a href="#faq">Dúvidas</a>
-      <a class="btn" href="#oferta">Quero o kit</a>
+      <a class="btn js-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Quero o kit</a>
     </div>
   </div>
 </nav>
@@ -436,14 +457,15 @@ footer a:hover{text-decoration:underline}
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <span class="tag">🚀 Kit de lançamento · R$ 37 (depois R$ 47)</span>
+      <span class="tag">🚀 Lançamento: R$ 37 <span class="old">(depois R$ 47)</span></span>
       <h1>Pare de perder cliente no WhatsApp. <span class="hl">Organize seu atendimento em 7 dias.</span></h1>
       <p class="lead">Guia com prints, planner, Raio-X do Atendente e textos prontos para organizar seu WhatsApp Business e responder seus clientes na hora certa. Sem programar: 7 dias, cerca de 30 minutos por dia.</p>
-      <p class="avail">✨ <strong>Com ou sem o agente de IA da Meta</strong>, o kit deixa seu WhatsApp Business pronto para responder rápido, perder menos clientes e vender mais. <a href="#disponibilidade">Veja como funciona</a></p>
       <div class="hero-ctas">
-        <a class="btn" href="#oferta">Quero o kit por R$ 37</a>
+        <a class="btn js-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Quero o kit por R$ 37</a>
         <a class="btn btn-ghost" href="#kit">Ver o que vem no kit</a>
       </div>
+      <p class="micro">🔒 Pagamento único pela Hotmart · acesso imediato por e-mail · garantia de 7 dias</p>
+      <p class="avail">✨ <strong>Com ou sem o agente de IA da Meta</strong>, o kit deixa seu WhatsApp Business pronto para responder rápido, perder menos clientes e vender mais. <a href="#disponibilidade">Veja como funciona</a></p>
       <div class="trust">
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Guia passo a passo com prints</span>
         <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Planner de 7 dias</span>
@@ -504,8 +526,8 @@ footer a:hover{text-decoration:underline}
 
 <div class="niches-band">
   <div class="wrap">
-    <span class="lbl">Com textos prontos para</span>
-    <span class="chip">💈 Barbearias</span><span class="chip">💇 Salões de Beleza</span><span class="chip">✨ Clínicas de Estética</span><span class="chip">🦷 Dentistas</span><span class="chip">🩺 Consultórios</span><span class="chip">🐾 Pet Shops</span>
+    <p class="lbl">Textos prontos para o seu tipo de negócio</p>
+    <div class="chips"><span class="chip">💈 Barbearias</span><span class="chip">💇 Salões de Beleza</span><span class="chip">✨ Clínicas de Estética</span><span class="chip">🦷 Dentistas</span><span class="chip">🩺 Consultórios</span><span class="chip">🐾 Pet Shops</span></div>
   </div>
 </div>
 
@@ -640,6 +662,15 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+<section class="midcta">
+  <div class="wrap">
+    <div class="midcta-card">
+      <div><strong>Kit completo por R$ 37</strong><span>Guia + Planner + Raio-X + Textos prontos · pagamento único · garantia de 7 dias</span></div>
+      <a class="btn js-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Quero o kit por R$ 37</a>
+    </div>
+  </div>
+</section>
+
 <section class="plan dark" id="plano">
   <div class="wrap">
     <div class="sec-head">
@@ -720,7 +751,7 @@ footer a:hover{text-decoration:underline}
         <span class="from">Preço normal R$ 47</span>
         <div class="now"><small>R$</small><span>37</span></div>
         <span class="inst">preço de lançamento · pagamento único</span>
-        <a class="btn" id="cta-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Garantir meu kit por R$ 37</a>
+        <a class="btn js-checkout" id="cta-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Garantir meu kit por R$ 37</a>
         <p class="secure">Pagamento processado pela Hotmart. Acesso enviado por e-mail.</p>
         <span class="pay-note">Pix ou cartão · 4 PDFs para baixar e usar no celular</span>
         <div class="guar">
@@ -746,7 +777,11 @@ footer a:hover{text-decoration:underline}
       <details><summary>Como pago e como recebo?</summary><p>A compra é feita pela Hotmart, com Pix ou cartão. Assim que o pagamento é confirmado, o acesso chega no seu e-mail.</p></details>
       <details><summary>E se eu comprar e não gostar?</summary><p>Você tem 7 dias de garantia. É só pedir o reembolso pela Hotmart e recebe 100% do valor.</p></details>
       <details><summary>O kit garante mais vendas?</summary><p>Não. Nenhum material pode garantir resultado. O kit ajuda você a organizar o atendimento e a responder mais rápido e com mais clareza. O que acontece com as suas vendas depende do seu negócio.</p></details>
-      <details><summary>E se eu tiver dúvidas?</summary><p>Fale com a gente pelo WhatsApp de suporte: <a href="https://wa.me/5511975049937?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">clique aqui</a>.</p></details>
+      <details><summary>E se eu tiver dúvidas?</summary><p>Fale com a gente pelo WhatsApp de suporte: <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">clique aqui</a>.</p></details>
+    </div>
+    <div class="helpbox">
+      <div><strong>Ficou com alguma dúvida?</strong><span>Fale com a gente pelo WhatsApp. Respondemos assim que possível.</span></div>
+      <a class="btn wa" href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.9 1.35-.5.05-1.1.07-1.8-.1-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.14-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33l.5.01c.17 0 .4-.06.6.45.25.6.85 2.1.93 2.25.07.15.12.33.02.52-.1.2-.15.33-.3.5-.15.18-.3.38-.45.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.3 2.4 1.45.3.15.47.12.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.17 1.4z"/></svg>Chamar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -756,7 +791,7 @@ footer a:hover{text-decoration:underline}
     <div class="final-card">
       <h2>Seu próximo cliente pode mandar mensagem hoje à noite.</h2>
       <p>Deixe o seu WhatsApp Business organizado para responder melhor. Em 7 dias, cerca de 30 minutos por dia, com garantia de 7 dias.</p>
-      <a class="btn" href="#oferta">Quero o kit por R$ 37</a>
+      <a class="btn js-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener">Quero o kit por R$ 37</a>
     </div>
   </div>
 </section>
@@ -768,21 +803,21 @@ footer a:hover{text-decoration:underline}
       <nav aria-label="Rodapé">
         <a href="termos.html">Termos de uso</a>
         <a href="privacidade.html">Política de privacidade</a>
-        <a href="https://wa.me/5511975049937?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">Suporte</a>
-        <a href="https://instagram.com/meuagentezap.ia" target="_blank" rel="noopener">Instagram @meuagentezap.ia</a>
+        <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">Suporte no WhatsApp</a>
       </nav>
+      <div class="social"><a href="https://www.instagram.com/meuagentezap.ia/" target="_blank" rel="noopener" aria-label="Instagram @meuagentezap.ia" title="Instagram @meuagentezap.ia"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a><a href="https://www.facebook.com/people/Meu-Agente-Zap/61594888123354/" target="_blank" rel="noopener" aria-label="Facebook Meu Agente Zap" title="Facebook Meu Agente Zap"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.95.4-1.7 1.8-1.7h1.6V3.8c-.3 0-1.3-.1-2.4-.1-2.5 0-4.1 1.5-4.1 4.2v2.6H7.6v3.3h2.8V22h3.1z"/></svg></a><a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener" aria-label="WhatsApp de suporte" title="WhatsApp de suporte"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.9 1.35-.5.05-1.1.07-1.8-.1-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.14-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33l.5.01c.17 0 .4-.06.6.45.25.6.85 2.1.93 2.25.07.15.12.33.02.52-.1.2-.15.33-.3.5-.15.18-.3.38-.45.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.3 2.4 1.45.3.15.47.12.65-.08.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.17 1.4z"/></svg></a></div>
     </div>
     <div class="legal">
       <p>Meu Agente Zap · CNPJ 39.680.100/0001-41</p>
       <p>Este produto não é afiliado, patrocinado ou endossado pela Meta ou pelo WhatsApp. WhatsApp é marca registrada da Meta Platforms, Inc. A disponibilidade do agente de IA depende da Meta. Os exemplos de conversa são ilustrativos.</p>
-      <p>Contato: <a href="mailto:contato@meuagentezap.com">contato@meuagentezap.com</a></p>
+      <p>Contato: <a href="mailto:contato@meuagentezap.com">contato@meuagentezap.com</a> · WhatsApp <a href="https://wa.me/5511916960280?text=Ol%C3%A1%21%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Kit%20Meu%20Agente%20Zap." target="_blank" rel="noopener">(11) 91696-0280</a></p>
     </div>
   </div>
 </footer>
 
 <div class="sticky" id="sticky" aria-hidden="true">
   <div class="p">R$ 37<small>Preço de lançamento</small></div>
-  <a class="btn" href="#oferta" tabindex="-1">Quero o kit</a>
+  <a class="btn js-checkout" href="https://pay.hotmart.com/Q107925846F?off=ozc8m0k7" target="_blank" rel="noopener" tabindex="-1">Quero o kit</a>
 </div>
 
 <script>
@@ -860,8 +895,8 @@ footer a:hover{text-decoration:underline}
   window.addEventListener('scroll',check,{passive:true});check();
 })();
 // Evento do pixel ao clicar para ir ao checkout
-document.getElementById('cta-checkout').addEventListener('click',function(){
-  if(window.fbq){fbq('track','InitiateCheckout');}
+document.querySelectorAll('.js-checkout').forEach(function(a){
+  a.addEventListener('click',function(){ if(window.fbq){fbq('track','InitiateCheckout');} });
 });
 </script>
 </body>
